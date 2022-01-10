@@ -7,7 +7,6 @@ import os
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
-print('server' + os.getenv('server'))
 
  
 bot = commands.Bot(command_prefix = 'prefix')

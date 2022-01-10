@@ -1,1 +1,6 @@
 python-dotenv
+discord
+discord.ext
+discord.ext.commands
+os
+
