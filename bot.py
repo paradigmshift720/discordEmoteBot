@@ -28,7 +28,7 @@ async def react(message):
  
 @bot.event                                             
 async def on_message(message):
-    if message.channel.id == os.getenv('channelId'):                # remove this line == the bot reacts to everyone in the channel                 
+    if message.channel.id == int(os.getenv('channelId')):              # remove this line == the bot reacts to everyone in the channel                 
             await react(message)                        # channelid and authorid do not need quotations ie. "" remove them
  
 bot.run(os.getenv('server'))
