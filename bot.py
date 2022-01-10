@@ -2,7 +2,13 @@ import discord
 from discord.ext    import commands
 from discord.ext.commands   import Bot
 import asyncio
-import config
+# import config
+import os
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+print('server' + os.getenv('server'))
+
  
 bot = commands.Bot(command_prefix = 'prefix')
  
@@ -23,10 +29,10 @@ async def react(message):
  
 @bot.event                                             
 async def on_message(message):
-    if message.channel.id == config.channelId:                # remove this line == the bot reacts to everyone in the channel                 
+    if message.channel.id == os.getenv('channelId'):                # remove this line == the bot reacts to everyone in the channel                 
             await react(message)                        # channelid and authorid do not need quotations ie. "" remove them
  
-bot.run(config.server)
+bot.run(os.getenv('server'))
  
 
 
